@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>PG Hub</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.triarq.pghub.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SourceConnection</display-name>
+    <servlet-name>SourceConnection</servlet-name>
+    <servlet-class>com.triarq.pghub.connections.SourceConnection</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SourceConnection</servlet-name>
+    <url-pattern>/SourceConnection</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>SourecConnectionFilter</display-name>
+    <filter-name>SourecConnectionFilter</filter-name>
+    <filter-class>com.triarq.pghub.connections.SourecConnectionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SourecConnectionFilter</filter-name>
+    <url-pattern>/SourceConnection</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DestinationConnection</display-name>
+    <servlet-name>DestinationConnection</servlet-name>
+    <servlet-class>com.triarq.pghub.connections.DestinationConnection</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DestinationConnection</servlet-name>
+    <url-pattern>/DestinationConnection</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>DestinationConnectionFilter</display-name>
+    <filter-name>DestinationConnectionFilter</filter-name>
+    <filter-class>com.triarq.pghub.connections.DestinationConnectionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>DestinationConnectionFilter</filter-name>
+    <url-pattern>/DestinationConnection</url-pattern>
+  </filter-mapping>
+</web-app>
